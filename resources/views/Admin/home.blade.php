@@ -176,21 +176,24 @@
                                 src="Template/admin/assets/img/user.png" class="user-img-radious-style"> <span
                                 class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
-                            <div class="dropdown-title">Hello Sarah Smith</div>
+                            <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
                             <a href="profile.html" class="dropdown-item has-icon"> <i
                                     class="far
-										fa-user"></i> Profile
-                            </a> <a href="timeline.html" class="dropdown-item has-icon"> <i
-                                    class="fas fa-bolt"></i>
-                                Activities
-                            </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+										fa-user"></i> Profile</a>
+                            {{-- <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                                 Settings
-                            </a>
+                            </a> --}}
                             <div class="dropdown-divider"></div>
-                            <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
+                            <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> <i
                                     class="fas fa-sign-out-alt"></i>
-                                Logout
+                                {{ __('Logout') }}
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -198,7 +201,7 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"> <img alt="image" src="Template/admin/assets/img/logosisi.png"
+                        <a href={{ route('home') }}> <img alt="image" src="Template/admin/assets/img/logosisi.png"
                                 class="header-logo" />
                         </a>
                     </div>
