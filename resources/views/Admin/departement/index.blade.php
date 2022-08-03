@@ -10,6 +10,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Basic DataTables</h4>
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <a href="{{ route('departement.create') }}" class="btn btn-sm- btn-primary">New
+                                            Department</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

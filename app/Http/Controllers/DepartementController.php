@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Departement;
 
 class DepartementController extends Controller
 {
@@ -13,7 +14,7 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        return view('Admin.departement');
+        return view('Admin.departement.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.departement.create');
     }
 
     /**
@@ -34,7 +35,15 @@ class DepartementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+
+        ]);
+        $categori = new Departement();
+        $categori->name = $request->get('name');
+        $categori->save();
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('categori.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
