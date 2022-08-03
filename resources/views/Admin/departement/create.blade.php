@@ -9,7 +9,7 @@
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Horizontal Form</h4>
+                                <h4>Department</h4>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('departement.store') }}" method="POST"
