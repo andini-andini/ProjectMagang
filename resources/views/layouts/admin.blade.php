@@ -236,7 +236,8 @@
                                 <li><a class="nav-link" href="chat.html">Asset</a></li>
                                 <li><a class="nav-link" href="portfolio.html">Asset categories</a></li>
                                 <li><a class="nav-link" href="blog.html">Manufacturers</a></li>
-                                <li><a class="nav-link" href="calendar.html">Locations</a></li>
+                                <li><a class="nav-link" href="{{ route('location.index') }}">Locations</a>
+                                </li>
                                 <li><a class="nav-link" href="calendar.html">Suppliers</a></li>
                             </ul>
                         </li>

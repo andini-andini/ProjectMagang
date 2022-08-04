@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Departement;
+use App\Models\Location;
 
-class DepartementController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        $departement = Departement::all(); // Mengambil semua isi tabel
-        return view('Admin.departement.index', compact('departement'), ['data' => $departement]);
+        $location = Location::all(); // Mengambil semua isi tabel
+        return view('Admin.location.index', compact('location'), ['data' => $location]);
     }
 
     /**
@@ -25,7 +25,7 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        return view('Admin.departement.create');
+        return view('Admin.location.create');
     }
 
     /**
@@ -40,11 +40,11 @@ class DepartementController extends Controller
             'name' => 'required',
 
         ]);
-        $departement = new Departement();
-        $departement->name = $request->get('name');
-        $departement->save();
+        $location = new Location();
+        $location->name = $request->get('name');
+        $location->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('departement.index')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect()->route('location.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -66,8 +66,8 @@ class DepartementController extends Controller
      */
     public function edit($id)
     {
-        $departement = Departement::find($id);
-        return view('Admin.departement.edit', compact('departement'));
+        $location = Location::find($id);
+        return view('Admin.location.edit', compact('location'));
     }
 
     /**
@@ -82,12 +82,12 @@ class DepartementController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-        $departement = Departement::find($id);
+        $location = Location::find($id);
 
-        $departement->name = $request->get('name');
-        $departement->save();
+        $location->name = $request->get('name');
+        $location->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('departement.index')->with('success', 'Data Berhasil Diperbarui');
+        return redirect()->route('location.index')->with('success', 'Data Berhasil Diperbarui');
     }
 
     /**
@@ -98,7 +98,7 @@ class DepartementController extends Controller
      */
     public function destroy($id)
     {
-        Departement::find($id)->delete();
-        return redirect()->route('departement.index')->with('success', 'Data Berhasil Dihapus');
+        Location::find($id)->delete();
+        return redirect()->route('location.index')->with('success', 'Data Berhasil Dihapus');
     }
 }
