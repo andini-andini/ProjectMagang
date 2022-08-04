@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ManufactureController;
+use App\Models\Manufacture;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/departement', [App\Http\Controllers\DepartementController::class, 'index'])->name('departement');
 Route::resource('departement', DepartementController::class);
 Route::resource('location', LocationController::class);
+Route::resource('manufacture', ManufactureController::class);
