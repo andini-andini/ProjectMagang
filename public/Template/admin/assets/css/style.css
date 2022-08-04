@@ -3331,6 +3331,7 @@ select.form-control:not([size]):not([multiple]) {
     padding: 2px 15px
 }
 
+
 .card .card-header .btn:not(.note-btn) {
     border-radius: 30px
 }

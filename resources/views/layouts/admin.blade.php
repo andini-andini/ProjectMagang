@@ -16,6 +16,7 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('Template/admin/assets/css/custom.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href="{{ asset('Template/admin/assets/img/favicon.png') }}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -533,13 +534,14 @@
                 </div>
             </div>
         </div>
-        <footer class="main-footer">
-            <div class="footer-left">
-                <a href="templateshub.net">Templateshub</a></a>
-            </div>
-            <div class="footer-right">
-            </div>
-        </footer>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-left">
+            <a href="templateshub.net"> Ⓒ PT SINERGI INFORMATIKA SEMEN INDONESIA - 2022</a></a>
+        </div>
+        <div class="footer-right">
+        </div>
+    </footer>
     </div>
     </div>
     <!-- General JS Scripts -->
