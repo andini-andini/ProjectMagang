@@ -22,5 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/department', [App\Http\Controllers\DepartementController::class, 'index'])->name('department');
+// Route::get('/departement', [App\Http\Controllers\DepartementController::class, 'index'])->name('departement');
 Route::resource('departement', DepartementController::class);

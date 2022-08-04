@@ -14,7 +14,8 @@ class DepartementController extends Controller
      */
     public function index()
     {
-        return view('Admin.departement.index');
+        $departement = Departement::all(); // Mengambil semua isi tabel
+        return view('Admin.departement.index', compact('departement'), ['data' => $departement]);
     }
 
     /**
@@ -43,7 +44,7 @@ class DepartementController extends Controller
         $categori->name = $request->get('name');
         $categori->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('categori.index')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect()->route('departement.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -65,7 +66,8 @@ class DepartementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $departement = Departement::find($id);
+        return view('Admin.departement.edit', compact('departement'));
     }
 
     /**
@@ -77,7 +79,15 @@ class DepartementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $departement = Departement::find($id);
+
+        $departement->name = $request->get('name');
+        $departement->save();
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('departement.index')->with('success', 'Data Berhasil Diperbarui');
     }
 
     /**
@@ -88,6 +98,7 @@ class DepartementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Departement::find($id)->delete();
+        return redirect()->route('departement.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

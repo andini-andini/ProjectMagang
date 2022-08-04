@@ -220,7 +220,7 @@
                                     data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="{{ route('department') }}" class="nav-link"><i
+                            <a href="{{ route('departement.index') }}" class="nav-link"><i
                                     data-feather="briefcase"></i><span>Department</span></a>
                         </li>
                         <li class="dropdown">

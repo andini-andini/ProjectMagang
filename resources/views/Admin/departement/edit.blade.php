@@ -9,17 +9,19 @@
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>New Department</h4>
+                                <h4>Edit Department</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('departement.store') }}" method="POST"
+                                <form action="{{ route('departement.update', $departement->id) }}" method="POST"
                                     enctype="multipart/form-data">
+                                    @method('PUT')
                                     @csrf
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Name</label>
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                id="name" name="name" value="{{ old('name') }}" placeholder="Enter name">
+                                                id="name" name="name" value="{{ $departement->name }}"
+                                                placeholder="Enter name">
 
                                             @error('name')
                                                 <small class="text-danger">{{ $message }}</small>
