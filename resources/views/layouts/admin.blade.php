@@ -184,7 +184,7 @@
                                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
                             <div class="dropdown-title">Hello {{ Auth::user()->name }}</div>
-                            <a href="profile.html" class="dropdown-item has-icon"> <i
+                            <a href="{{ route('profile.index') }}" class="dropdown-item has-icon"> <i
                                     class="far
 										fa-user"></i> Profile</a>
                             {{-- <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>

@@ -8,6 +8,7 @@ use App\Http\Controllers\ManufactureController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Route::resource('manufacture', ManufactureController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('user', UserController::class);
 Route::resource('supplier', SupplierController::class);
+Route::resource('profile', ProfileController::class);

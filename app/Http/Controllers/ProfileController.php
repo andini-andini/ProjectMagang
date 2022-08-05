@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Departement;
 use Illuminate\Support\Facades\Storage;
 
-class UserController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $user = User::all()->sortBy("asc");
         $departement = Departement::all()->sortBy("asc");
-        return view('Admin.user.index',  ['departement' => $departement], compact('user', 'departement'));
+        return view('Admin.user.profile',  ['departement' => $departement], compact('user', 'departement'));
     }
 
     /**
