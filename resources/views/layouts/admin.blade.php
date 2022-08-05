@@ -241,14 +241,15 @@
                                         href="{{ route('manufacture.index') }}">Manufacture</a></li>
                                 <li><a class="nav-link" href="{{ route('location.index') }}">Locations</a>
                                 </li>
-                                <li><a class="nav-link" href="calendar.html">Suppliers</a></li>
+                                <li><a class="nav-link" href="{{ route('supplier.index') }}">Suppliers</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="users"></i><span>People</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="email-inbox.html">User</a></li>
+                                <li><a class="nav-link" href="{{ route('user.index') }}">User</a></li>
                                 <li><a class="nav-link" href="email-compose.html">Admin</a></li>
                                 <li><a class="nav-link" href="email-read.html">Technician</a></li>
                             </ul>
