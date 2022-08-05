@@ -114,4 +114,14 @@ class UserController extends Controller
     {
         //
     }
+
+    public function admin()
+    {
+        // $user = User::all()->sortBy("asc");
+        $departement = Departement::all()->sortBy("asc");
+        // $admin = User::with('user')->where($departement->name, 1)->get();
+        $admin = User::table('user')->where('role', 'adm')->all();
+        // return view('pemesanan.index_usr', ['pemesanan' => $pemesanan, 'service' => $service, 'user' => $users]);
+        return view('Admin.user.index',  ['departement' => $departement], compact('user', 'departement'));
+    }
 }

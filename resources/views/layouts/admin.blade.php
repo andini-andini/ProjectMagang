@@ -233,7 +233,7 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="grid"></i><span>Inventory</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chat.html">Asset</a></li>
+                                <li><a class="nav-link" href="{{ route('asset.index') }}">Asset</a></li>
                                 <li><a class="nav-link" href="{{ route('category.index') }}">Asset
                                         Categories</a></li>
                                 <li><a class="nav-link"

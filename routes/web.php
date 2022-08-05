@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AssetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', [App\Http\Controllers\UserController::class, 'admin'])->name('user.admin');
 // Route::get('/departement', [App\Http\Controllers\DepartementController::class, 'index'])->name('departement');
 Route::resource('departement', DepartementController::class);
 Route::resource('location', LocationController::class);
@@ -36,3 +38,4 @@ Route::resource('category', CategoryController::class);
 Route::resource('user', UserController::class);
 Route::resource('supplier', SupplierController::class);
 Route::resource('profile', ProfileController::class);
+Route::resource('asset', AssetController::class);
