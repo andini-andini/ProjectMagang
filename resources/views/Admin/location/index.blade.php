@@ -10,11 +10,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Location</h4>
-                                <div class="row mb-4">
-                                    <div class="col-12">
-                                        <a href="{{ route('location.create') }}" class="btn btn-sm- btn-primary">New
-                                            Location</a>
-                                    </div>
+                                <div class="card-header-action">
+                                    <a href="{{ route('location.create') }}" class="btn btn-sm- btn-primary">New
+                                        Location</a>
                                 </div>
                             </div>
                             <div class="card-body">

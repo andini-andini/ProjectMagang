@@ -10,16 +10,19 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Department</h4>
-                                {{-- <a href="{{ route('departement.create') }}" class="btn btn-sm- btn-primary ">New
-                                            Department</a> --}}
-                                <button onclick="document.getElementById('id01').style.display='block'"
+                                <div class="card-header-action">
+                                    <a href="{{ route('departement.create') }}" class="btn btn-sm- btn-primary ">New
+                                        Department</a>
+                                </div>
+
+                                {{-- <button onclick="document.getElementById('id01').style.display='block'"
                                     class="btn btn-sm- btn-primary">New Department</button>
                             </div>
                             <div id="id01" class="w3-modal" style="text-align: center">
                                 <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
                                     <span onclick="document.getElementById('id01').style.display='none'"
                                         class="w3-button w3-xlarge w3-hover-red w3-display-topright"
-                                        title="Close Modal">&times;</span>
+                                        title="Close">&times;</span>
                                     <div class="card-header">
                                         <h2>New Department</h2>
                                     </div>
@@ -38,14 +41,14 @@
                                                         <small class="text-danger">{{ $message }}</small>
                                                     @enderror
                                                     {{-- <input type="email" class="form-control" id="inputEmail4" placeholder="Email"> --}}
-                                                </div>
+                                {{-- </div>
                                             </div>
                                             <div class="card-footer">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                            </div> --}}
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -53,7 +56,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
-                                                    id
+                                                    Id
                                                 </th>
                                                 <th>Department Name</th>
                                                 <th>Action</th>

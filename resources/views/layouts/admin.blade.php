@@ -16,7 +16,6 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('Template/admin/assets/css/custom.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href="{{ asset('Template/admin/assets/img/favicon.png') }}" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -216,11 +215,11 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Main</li>
-                        <li class="dropdown active">
+                        <li class="dropdown-action">
                             <a href="{{ route('home') }}" class="nav-link"><i
                                     data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown-action">
                             <a href="{{ route('departement.index') }}" class="nav-link"><i
                                     data-feather="briefcase"></i><span>Department</span></a>
                         </li>

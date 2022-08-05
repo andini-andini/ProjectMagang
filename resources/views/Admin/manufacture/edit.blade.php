@@ -31,6 +31,7 @@
                                     </div>
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary">Submit</button>
+                                        <a href="{{ route('manufacture.index') }}" class="btn btn-danger">Cancel</a>
                                     </div>
                                 </form>
                             </div>

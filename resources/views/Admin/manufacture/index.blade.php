@@ -10,11 +10,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4>Manufacture</h4>
-                                <div class="row mb-4">
-                                    <div class="col-12">
-                                        <a href="{{ route('manufacture.create') }}" class="btn btn-sm- btn-primary">New
-                                            Manufacture</a>
-                                    </div>
+                                <div class="card-header-action">
+                                    <a href="{{ route('manufacture.create') }}" class="btn btn-sm- btn-primary">New
+                                        Manufacture</a>
                                 </div>
                             </div>
                             <div class="card-body">
