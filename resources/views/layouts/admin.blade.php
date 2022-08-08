@@ -224,10 +224,12 @@
                                     data-feather="briefcase"></i><span>Department</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link"><i data-feather="layers"></i><span>Project</span></a>
+                            <a href="{{ route('project.index') }}" class="nav-link"><i
+                                    data-feather="layers"></i><span>Project</span></a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="nav-link"><i data-feather="file-text"></i><span>Ticket</span></a>
+                            <a href="{{ route('ticket.index') }}" class="nav-link"><i
+                                    data-feather="file-text"></i><span>Ticket</span></a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i

@@ -10,6 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AssetController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,5 @@ Route::resource('user', UserController::class);
 Route::resource('supplier', SupplierController::class);
 Route::resource('profile', ProfileController::class);
 Route::resource('asset', AssetController::class);
+Route::resource('project', ProjectController::class);
+Route::resource('ticket', TicketController::class);
