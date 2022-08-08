@@ -24,7 +24,7 @@
                                                     id
                                                 </th>
                                                 <th>Category Name</th>
-                                                <th>Color</th>
+                                                {{-- <th>Color</th> --}}
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -32,8 +32,9 @@
                                             @foreach ($category as $cat)
                                                 <tr>
                                                     <td class="text-center">{{ $cat->id }}</td>
-                                                    <td>{{ $cat->name }}</td>
-                                                    <td>{{ $cat->color }}</td>
+                                                    <td style="color: {{ $cat->color }}">{{ $cat->name }}
+                                                    </td>
+                                                    {{-- <td>{{ $cat->color }}</td> --}}
                                                     <td>
                                                         <form action="{{ route('category.destroy', $cat->id) }}"
                                                             method="POST">

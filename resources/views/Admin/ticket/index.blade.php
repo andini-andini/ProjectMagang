@@ -43,10 +43,27 @@
                                                     <td>{{ $tic->asset->name }}</td>
                                                     <td>{{ $tic->project->name }}</td>
                                                     <td>{{ $tic->recipiects }}</td>
-                                                    <td>{{ $tic->priority }}</td>
-                                                    <td>{{ $tic->status }}</td>
                                                     <td>
-                                                        {{-- <form action="{{ route('location.destroy', $loc->id) }}"
+                                                        @if ($tic->priority == 'High')
+                                                            <a style="color: red">High</a>
+                                                        @elseif ($tic->priority == 'Medium')
+                                                            <a style="color: rgb(220, 220, 0)">Medium</a>
+                                                        @else
+                                                            <a style="color: rgb(18, 213, 18)">Low</a>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($tic->status == 'Broken')
+                                                            <a style="color: red">Broken</a>
+                                                        @elseif ($tic->status == 'Use')
+                                                            <a style="color: rgb(18, 213, 18)">Use</a>
+                                                        @else
+                                                            <a style="color: blue">New</a>
+                                                        @endif
+                                                    </td>
+                                                    {{-- <td> --}}
+
+                                                    {{-- <form action="{{ route('location.destroy', $loc->id) }}"
                                                             method="POST">
                                                             <a class="btn btn-primary"
                                                                 href="{{ route('location.edit', $loc->id) }}">Edit</a>

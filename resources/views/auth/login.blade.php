@@ -90,14 +90,13 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="Template/login/css/style.css">
-
+    <link rel='shortcut icon' type='image/x-icon' href="{{ asset('Template/admin/assets/img/favicon.png') }}" />
     <title>Login</title>
 </head>
 
+
 <body>
-
-
-
+    <img src="Template/login/images/logosisi.png" alt="Image" class="right">
     <div class="content">
         <div class="container">
             <div class="row">
