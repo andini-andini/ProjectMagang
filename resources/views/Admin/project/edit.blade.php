@@ -12,13 +12,15 @@
                             <h4>New Project</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('project.update', $project->id) }}" method="POST"
+                                enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Tag</label>
                                         <input type="text" class="form-control @error('tag') is-invalid @enderror" id="tag"
-                                            name="tag" value="{{ old('tag') }}" placeholder="Enter Tag">
+                                            name="tag" value="{{ $project->tag }}" placeholder="Enter Tag">
 
                                         @error('tag')
                                             <small class="text-danger">{{ $message }}</small>
@@ -28,7 +30,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Name</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                            id="name" name="name" value="{{ old('name') }}" placeholder="Enter name">
+                                            id="name" name="name" value="{{ $project->name }}" placeholder="Enter name">
 
                                         @error('name')
                                             <small class="text-danger">{{ $message }}</small>
@@ -40,7 +42,8 @@
                                         <select name="departement" id="departement"
                                             class="form-control @error('departement') is-invalid @enderror"
                                             name="departement" value="" autocomplete="departement">
-                                            <option value="" disabled selected>Select Department</option>
+                                            <option value="{{ $project->departement->name }}" disabled selected>Select
+                                                Department</option>
                                             @foreach ($departement as $dep)
                                                 <option value="{{ $dep->id }}">
                                                     {{ $dep->name }}</option>
@@ -50,7 +53,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="inputEmail4">Total Assets</label>
                                         <input type="number" class="form-control @error('jumlahAsset') is-invalid @enderror"
-                                            id="jumlahAsset" name="jumlahAsset" value="{{ old('jumlAhasset') }}"
+                                            id="jumlahAsset" name="jumlahAsset" value="{{ $project->jumlahAsset }}"
                                             placeholder="Enter Total Assets">
 
                                         @error('jumlahAsset')
@@ -61,7 +64,7 @@
                                     <div class="form-group col-md-12">
                                         <label for="inputEmail4">Location</label>
                                         <input type="text" class="form-control @error('lokasi') is-invalid @enderror"
-                                            id="lokasi" name="lokasi" value="{{ old('lokasi') }}"
+                                            id="lokasi" name="lokasi" value="{{ $project->lokasi }}"
                                             placeholder="Enter Location">
 
                                         @error('lokasi')
@@ -71,13 +74,15 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Start Date</label>
-                                        <input type="date" name="startDate" id="startDate" value="" placeholder="dd-mm-yyyy"
+                                        <input type="date" name="startDate" id="startDate"
+                                            value="{{ $project->startDate }}" placeholder="dd-mm-yyyy"
                                             pattern="(?:30))|(?:(?:0[13578]|1[02])-31))/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])"
                                             class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Due Date</label>
-                                        <input type="date" name="dueDate" id="dueDate" value="" placeholder="dd-mm-yyyy"
+                                        <input type="date" name="dueDate" id="dueDate" value="{{ $project->dueDate }}"
+                                            placeholder="dd-mm-yyyy"
                                             pattern="(?:30))|(?:(?:0[13578]|1[02])-31))/(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])/(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])"
                                             class="form-control">
                                     </div>

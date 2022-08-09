@@ -31,6 +31,7 @@
                                                 <th>Recipients</th>
                                                 <th>Priority</th>
                                                 <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -42,7 +43,7 @@
                                                     <td>{{ $tic->departement->name }}</td>
                                                     <td>{{ $tic->asset->name }}</td>
                                                     <td>{{ $tic->project->name }}</td>
-                                                    <td>{{ $tic->recipiects }}</td>
+                                                    <td>{{ $tic->recipients }}</td>
                                                     <td>
                                                         @if ($tic->priority == 'High')
                                                             <a style="color: red">High</a>
@@ -53,23 +54,23 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        @if ($tic->status == 'Broken')
-                                                            <a style="color: red">Broken</a>
-                                                        @elseif ($tic->status == 'Use')
-                                                            <a style="color: rgb(18, 213, 18)">Use</a>
+                                                        @if ($tic->status == 'Waiting')
+                                                            <a style="color: red">Waiting</a>
+                                                        @elseif ($tic->status == 'On Progress')
+                                                            <a style="color: rgb(18, 213, 18)">On Progress</a>
                                                         @else
-                                                            <a style="color: blue">New</a>
+                                                            <a style="color: blue">Complete</a>
                                                         @endif
                                                     </td>
-                                                    {{-- <td> --}}
+                                                    <td>
 
-                                                    {{-- <form action="{{ route('location.destroy', $loc->id) }}"
+                                                        <form action="{{ route('ticket.destroy', $tic->id) }}"
                                                             method="POST">
                                                             <a class="btn btn-primary"
-                                                                href="{{ route('location.edit', $loc->id) }}">Edit</a>
+                                                                href="{{ route('ticket.edit', $tic->id) }}">Edit</a>
                                                             @csrf @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Delete</button>
-                                                        </form> --}}
+                                                        </form>
                                                     </td>
                                                 </tr>
                                         </tbody>

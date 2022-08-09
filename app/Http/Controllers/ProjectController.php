@@ -84,7 +84,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $departement = Departement::all();
+        $project = Project::find($id);
+        return view('Admin.project.edit', ['project' => $project, 'departement' => $departement]);
     }
 
     /**
@@ -96,7 +98,29 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'tag' => 'required',
+            'name' => 'required',
+            'jumlahAsset' => 'required',
+            'lokasi' => 'required',
+            'startDate' => 'required',
+            'dueDate' => 'required',
+
+        ]);
+        $project = Project::find($id);
+        $project->tag = $request->get('tag');
+        $project->name = $request->get('name');
+        $project->jumlahAsset = $request->get('jumlahAsset');
+        $project->lokasi = $request->get('lokasi');
+        $project->startDate = $request->get('startDate');
+        $project->dueDate = $request->get('dueDate');
+
+        $departement = Departement::all()->where('id', Request('departement'))->first();
+        $project->departement_id = $departement->id;
+
+        $project->save();
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('project.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -107,6 +131,7 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Project::find($id)->delete();
+        return redirect()->route('project.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

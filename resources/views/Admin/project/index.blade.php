@@ -29,6 +29,7 @@
                                                 <th>Location</th>
                                                 <th>Start Date</th>
                                                 <th>Due Date</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -42,13 +43,13 @@
                                                     <td>{{ $prj->startDate }}</td>
                                                     <td>{{ $prj->dueDate }}</td>
                                                     <td>
-                                                        {{-- <form action="{{ route('location.destroy', $loc->id) }}"
+                                                        <form action="{{ route('project.destroy', $prj->id) }}"
                                                             method="POST">
                                                             <a class="btn btn-primary"
-                                                                href="{{ route('location.edit', $loc->id) }}">Edit</a>
+                                                                href="{{ route('project.edit', $prj->id) }}">Edit</a>
                                                             @csrf @method('DELETE')
                                                             <button type="submit" class="btn btn-danger">Delete</button>
-                                                        </form> --}}
+                                                        </form>
                                                     </td>
                                                 </tr>
                                         </tbody>

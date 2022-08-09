@@ -9,10 +9,10 @@
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Edit Location</h4>
+                                <h4>Edit Supplier</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('location.update', $location->id) }}" method="POST"
+                                <form action="{{ route('supplier.update', $supplier->id) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
