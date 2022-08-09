@@ -109,13 +109,8 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        $asset = Asset::all();
-        $user = User::all();
-        $recipients = User::all()->where('role', 'usr',);
-        $departement = Departement::all();
-        $project = Project::all();
         $ticket = Ticket::find($id);
-        return view('Admin.ticket.edit', ['ticket' => $ticket, 'asset' => $asset, 'user' => $user, 'recipients' => $recipients, 'departement' => $departement, 'project' => $project]);
+        return view('Admin.ticket.edit', compact('ticket'));
     }
 
     /**
@@ -128,26 +123,11 @@ class TicketController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'subject' => 'required',
-            'priority' => 'required',
             'status' => 'required',
 
         ]);
         $ticket = Ticket::find($id);
-        $ticket->subject = $request->get('subject');
-        $ticket->priority = $request->get('priority');
-        $ticket->status = 'Waiting';
-
-        $recipients = User::all()->where('id', Request('recipients'))->first();
-        $departement = Departement::all()->where('id', Request('departement'))->first();
-        $asset = Asset::all()->where('id', Request('asset'))->first();
-        $project = Project::all()->where('id', Request('project'))->first();
-
-        $ticket->departement_id = $departement->id;
-        $ticket->user_id = Auth::user()->id;
-        $ticket->asset_id = $asset->id;
-        $ticket->project_id = $project->id;
-        $ticket->recipients = $recipients->id;
+        $ticket->status = $request->get('status');
         $ticket->save();
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('ticket.index')->with('success', 'Data Berhasil Ditambahkan');
